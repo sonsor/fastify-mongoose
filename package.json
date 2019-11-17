@@ -1,0 +1,26 @@
+{
+  "name": "fastify-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/sonsor/fastify-mongoose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/sonsor/fastify-mongoose/issues"
+  },
+  "homepage": "https://gitlab.com/sonsor/fastify-mongoose#readme",
+  "devDependencies": {
+    "mongoose": "^5.7.11"
+  },
+  "dependencies": {
+    "fastify-plugin": "^1.6.0"
+  }
+}
