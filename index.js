@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 
 class FastifyMongoose {
     constructor(config, next) {
-        
+
     }
 }
+
 function FastifyMongoose() {
     this.connection = null;
     this.user = '';
