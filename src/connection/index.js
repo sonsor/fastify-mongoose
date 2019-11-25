@@ -1,5 +1,7 @@
-const ConnectionFactory = require('./ConnectionFactory');
+import ConnectionFactory from './ConnectionFactory';
+import Connection from './Connection';
 
-module.exports = {
-    ConnectionFactory: ConnectionFactory
-};
+export {
+    Connection,
+    ConnectionFactory
+}

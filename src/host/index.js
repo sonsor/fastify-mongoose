@@ -1,7 +1,7 @@
-const Host = require('./Host');
-const Hosts = require('./Hosts');
+import Host from './Host';
+import Hosts from './Hosts';
 
-modules.exports = {
-    Host: Host,
-    Hosts: Hosts
+export {
+    Host,
+    Hosts
 }

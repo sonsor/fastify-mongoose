@@ -46,4 +46,4 @@ class Option
     }
 }
 
-module.exports = Option;
+export default Option;

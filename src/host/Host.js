@@ -3,8 +3,6 @@
  */
 class Host
 {
-    a = 10;
-    
     /**
      *
      * @param host
@@ -57,4 +55,4 @@ class Host
     }
 }
 
-module.exports = Host;
+export default Host;

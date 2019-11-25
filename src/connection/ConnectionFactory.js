@@ -1,5 +1,5 @@
-const Connection = require('./Connection');
-const Hosts = require('../Hosts');
+import Connection from './Connection';
+import { Hosts } from '../host';
 
 class ConnectionFactory
 {
@@ -8,8 +8,8 @@ class ConnectionFactory
         const connection = new Connection();
         connection.hosts = hosts;
         connection.protocol = 'mongodb';
-        return connection;co
+        return connection;
     }
 }
 
-module.exports = ConnectionFactory;
+export default ConnectionFactory;

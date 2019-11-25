@@ -48,4 +48,4 @@ class Hosts
     }
 }
 
-module.exports = Hosts;
+export default Hosts;

@@ -1,7 +1,7 @@
-const Options = require('./Options');
-const Option = require('./Option');
+import Options from './Options';
+import Option from './Option';
 
-module.exports = {
-    Option; Option,
-    Options: Options
+export {
+    Option,
+    Options
 }

@@ -1,6 +1,5 @@
-const ConnectionFactory = require('./connection');
-const Options = require('./Options');
-const Host = require('./Host');
+import { ConnectionFactory } from './connection';
+import { Host } from './host';
 
 const connect = (config) => {
 
@@ -11,7 +10,7 @@ const connect = (config) => {
         name,
         hosts,
         options
-    }
+    } = config;
 
     // create the connection instance
     const connection = ConnectionFactory.create();
@@ -26,7 +25,7 @@ const connect = (config) => {
     connection.name = name;
 
     // add all the hosts
-    (!Array.isArray(hosts) ? [hosts]: hosts).forEach(({ host, port }) {
+    (!Array.isArray(hosts) ? [hosts]: hosts).forEach(({ host, port }) => {
         connection.hosts.add(new Host(host, port));
     });
 
