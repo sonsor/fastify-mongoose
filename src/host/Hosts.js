@@ -40,7 +40,11 @@ class Hosts
      * @private
      */
     __toString() {
-        return '';
+        let hosts = '';
+        this._hosts.forEach((host) => {
+            hosts += host.toString();
+        })
+        return hosts;
     }
 }
 

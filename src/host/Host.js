@@ -3,6 +3,8 @@
  */
 class Host
 {
+    a = 10;
+    
     /**
      *
      * @param host

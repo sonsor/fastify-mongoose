@@ -1,7 +1,13 @@
-const fp = require('fastify-plugin')
-const mongoose = require('mongoose');
+//const fp = require('fastify-plugin')
+//const mongoose = require('mongoose');
 
-class FastifyMongoose {
+import fp from 'fastify-plugin';
+import mongoose from 'mongoose';
+import connect from './src';
+
+console.log(connect());
+
+/*class FastifyMongoose {
     constructor(config, next) {
 
     }
@@ -24,3 +30,4 @@ FastifyMongoose.prototype.toUrl = function() {
 module.exports = fp(FastifyMongoose, {
     name: 'fastify-mongoose'
 });
+*/
