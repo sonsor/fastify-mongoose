@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "dev": "node ./src/index.js",
+    "lint": "eslint --ignore-path .gitignore ./src ./test",
+    "pre:publish": "npm run lint && npm run test",
+    "test": "./node_modules/.bin/mocha --require ./test/bootstrap.js --timeout 10000 --recursive   ./test/**/*.test.js",
+    "coverage": "nyc --reporter html --reporter text npm test",
+    "pre:commit": "npm run lint && npm run coverage --silent"
   },
   "repository": {
     "type": "git",
@@ -19,16 +23,22 @@
   },
   "homepage": "https://gitlab.com/sonsor/fastify-mongoose#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^6.7.1",
+    "eslint-config-node": "^4.0.0",
+    "husky": "^3.1.0",
+    "mocha": "^6.2.2",
     "mongoose": "^5.7.11",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-node-externals": "^1.7.2"
+    "nyc": "^14.1.1",
+    "sinon": "^7.5.0"
   },
   "dependencies": {
     "fastify-plugin": "^1.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run pre:commit"
+    }
   }
 }
