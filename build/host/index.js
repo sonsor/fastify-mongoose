@@ -1,19 +1,23 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.Hosts = exports.Host = undefined;
+Object.defineProperty(exports, "Host", {
+  enumerable: true,
+  get: function () {
+    return _Host.default;
+  }
+});
+Object.defineProperty(exports, "Hosts", {
+  enumerable: true,
+  get: function () {
+    return _Hosts.default;
+  }
+});
 
-var _Host = require('./Host');
+var _Host = _interopRequireDefault(require("./Host"));
 
-var _Host2 = _interopRequireDefault(_Host);
-
-var _Hosts = require('./Hosts');
-
-var _Hosts2 = _interopRequireDefault(_Hosts);
+var _Hosts = _interopRequireDefault(require("./Hosts"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Host = _Host2.default;
-exports.Hosts = _Hosts2.default;

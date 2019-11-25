@@ -1,44 +1,36 @@
-'use strict';
+"use strict";
 
-var _connection = require('./connection');
+var _connection = require("./connection");
 
-var _host = require('./host');
+var _host = require("./host");
 
-var connect = function connect(config) {
+const connect = config => {
+  // extract configs
+  const {
+    user,
+    password,
+    name,
+    hosts,
+    options
+  } = config; // create the connection instance
 
-    // extract configs
-    var user = config.user,
-        password = config.password,
-        name = config.name,
-        hosts = config.hosts,
-        options = config.options;
+  const connection = _connection.ConnectionFactory.create(); // set the credentials of the connection
 
-    // create the connection instance
 
-    var connection = _connection.ConnectionFactory.create();
+  connection.user = user; // set user for the connection
 
-    // set the credentials of the connection
-    connection.user = user;
+  connection.password = password; // set db name for the connection
 
-    // set user for the connection
-    connection.password = password;
+  connection.name = name; // add all the hosts
 
-    // set db name for the connection
-    connection.name = name;
-
-    // add all the hosts
-    (!Array.isArray(hosts) ? [hosts] : hosts).forEach(function (_ref) {
-        var host = _ref.host,
-            port = _ref.port;
-
-        connection.hosts.add(new _host.Host(host, port));
-    });
-
-    // set all options
-
-    // establish the connection
-
-    // return the connection instance
+  (!Array.isArray(hosts) ? [hosts] : hosts).forEach(({
+    host,
+    port
+  }) => {
+    connection.hosts.add(new _host.Host(host, port));
+  }); // set all options
+  // establish the connection
+  // return the connection instance
 };
 
 module.exports = connect;
