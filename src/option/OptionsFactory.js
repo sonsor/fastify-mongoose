@@ -6,16 +6,11 @@ class OptionsFactory
     static create() {
 
         // creating options instance
-        let options = new Options();
-
-        options = new Proxy(options, {
-            get: options.get,
-            set: options.set
-        });
+        const options = new Options();
 
         // setting up default options
         for (const [key, value] of Object.entries(defaults)) {
-            options[key] = value;
+            options.set(key, value);
         }
 
         // return the options instance

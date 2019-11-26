@@ -1,5 +1,6 @@
 import { ConnectionFactory } from './connection';
 import { Host } from './host';
+import { toArray } from './helpers';
 
 const connect = (config) => {
 
@@ -24,14 +25,14 @@ const connect = (config) => {
     // set db name for the connection
     connection.name = name;
 
-    // add all the hosts
-    (!Array.isArray(hosts) ? [hosts]: hosts).forEach(({ host, port }) => {
+    // add all the hostss
+    for (const { host, port} of toArray(hosts)) {
         connection.hosts.add(new Host(host, port));
-    });
+    }
 
     // set all options
     for (const [key, value] of Object.entries(options)) {
-        connection.options[key] = value;
+        connection.options.set(key, value);
     }
 
     console.log(connection.options.toArray());
@@ -42,5 +43,5 @@ const connect = (config) => {
     // return the connection instance
 
 }
-connect({});
+connect({options: {}});
 export default connect;

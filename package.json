@@ -10,7 +10,7 @@
   "scripts": {
     "build": "babel src -d build",
     "test:build": "babel tests -d test",
-    "dev": "npm run build && node ./build/index.js",
+    "dev": "npm run build && node ./build/connect.js",
     "lint": "eslint --ignore-path .gitignore ./src ./tests",
     "test": "npm run test:build && npm run test:run",
     "test:run": "./node_modules/.bin/mocha --require ./test/bootstrap.js --timeout 10000 --recursive   ./test/**/*.test.js",

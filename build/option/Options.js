@@ -27,18 +27,16 @@ class Options {
    */
 
 
-  get(target, key) {
-    if (!target.options.has(key)) {
+  get(key) {
+    if (!this._options.has(key)) {
       throw new Error('the options ' + key + ' not supported');
     }
 
-    return target.options.get(key);
+    return this._options.get(key);
   }
 
-  set(target, key, value) {
-    target._options.set(key, value);
-
-    return true;
+  set(key, value) {
+    this._options.set(key, value);
   }
 
   toArray() {

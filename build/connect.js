@@ -9,6 +9,8 @@ var _connection = require("./connection");
 
 var _host = require("./host");
 
+var _helpers = require("./helpers");
+
 const connect = config => {
   // extract configs
   const {
@@ -26,23 +28,26 @@ const connect = config => {
 
   connection.password = password; // set db name for the connection
 
-  connection.name = name; // add all the hosts
+  connection.name = name; // add all the hostss
 
-  (!Array.isArray(hosts) ? [hosts] : hosts).forEach(({
+  for (const {
     host,
     port
-  }) => {
+  } of (0, _helpers.toArray)(hosts)) {
     connection.hosts.add(new _host.Host(host, port));
-  }); // set all options
+  } // set all options
+
 
   for (const [key, value] of Object.entries(options)) {
-    connection.options[key] = value;
+    connection.options.set(key, value);
   }
 
   console.log(connection.options.toArray()); // establish the connection
   // return the connection instance
 };
 
-connect({});
+connect({
+  options: {}
+});
 var _default = connect;
 exports.default = _default;
