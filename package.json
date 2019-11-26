@@ -9,12 +9,14 @@
   ],
   "scripts": {
     "build": "babel src -d build",
+    "test:build": "babel tests -d test",
     "dev": "npm run build && node ./build/index.js",
-    "lint": "eslint --ignore-path .gitignore ./src",
-    "pre:publish": "npm run lint && npm run test",
-    "test": "./node_modules/.bin/mocha --require ./test/bootstrap.js --timeout 10000 --recursive   ./test/**/*.test.js",
-    "coverage": "nyc --reporter html --reporter text npm test",
-    "pre:commit": "npm run lint && npm run coverage --silent"
+    "lint": "eslint --ignore-path .gitignore ./src ./tests",
+    "test": "npm run test:build && npm run test:run",
+    "test:run": "./node_modules/.bin/mocha --require ./test/bootstrap.js --timeout 10000 --recursive   ./test/**/*.test.js",
+    "coverage": "npm run test:build && nyc --reporter html --reporter text npm test",
+    "pre:commit": "npm run lint && npm run coverage --silent",
+    "pre:publish": "npm run lint && npm run build && npm run coverage"
   },
   "repository": {
     "type": "git",
@@ -38,12 +40,11 @@
     "eslint-config-node": "^4.0.0",
     "husky": "^3.1.0",
     "mocha": "^6.2.2",
-    "mongoose": "^5.7.12",
     "nyc": "^14.1.1",
     "sinon": "^7.5.0"
   },
   "dependencies": {
-    "babel-node": "0.0.1-security",
+    "mongoose": "^5.7.12",
     "fastify-plugin": "^1.6.0"
   },
   "husky": {

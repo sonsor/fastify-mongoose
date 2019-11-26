@@ -37,4 +37,4 @@ const connect = (config) => {
 
 }
 
-module.exports = connect;
+export default connect;
