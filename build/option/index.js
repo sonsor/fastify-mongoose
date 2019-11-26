@@ -9,15 +9,15 @@ Object.defineProperty(exports, "Options", {
     return _Options.default;
   }
 });
-Object.defineProperty(exports, "Option", {
+Object.defineProperty(exports, "OptionsFactory", {
   enumerable: true,
   get: function () {
-    return _Option.default;
+    return _OptionsFactory.default;
   }
 });
 
 var _Options = _interopRequireDefault(require("./Options"));
 
-var _Option = _interopRequireDefault(require("./Option"));
+var _OptionsFactory = _interopRequireDefault(require("./OptionsFactory"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

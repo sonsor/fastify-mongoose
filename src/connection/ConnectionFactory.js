@@ -1,6 +1,7 @@
 import Connection from './Connection';
 import { Hosts } from '../host';
 import { OptionsFactory } from '../option';
+import mongoose, { mongo } from 'mongoose';
 
 class ConnectionFactory
 {
@@ -19,6 +20,9 @@ class ConnectionFactory
 
         // setting up options property
         connection.options = OptionsFactory.create();
+
+        // setting the mongose object
+        connection.mongoose = mongoose;
 
         // return the connection instance
         return connection;

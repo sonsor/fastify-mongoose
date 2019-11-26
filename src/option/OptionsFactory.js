@@ -8,7 +8,7 @@ class OptionsFactory
         // creating options instance
         const options = new Options();
 
-        // settingup default options
+        // setting up default options
         for (const [key, value] of defaults) {
             options[key] = value;
         }

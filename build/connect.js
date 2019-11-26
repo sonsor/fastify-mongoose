@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 var _connection = require("./connection");
 
 var _host = require("./host");
@@ -29,8 +34,13 @@ const connect = config => {
   }) => {
     connection.hosts.add(new _host.Host(host, port));
   }); // set all options
-  // establish the connection
+
+  for (const [key, value] of options) {
+    connection.options[key] = value;
+  } // establish the connection
   // return the connection instance
+
 };
 
-module.exports = connect;
+var _default = connect;
+exports.default = _default;

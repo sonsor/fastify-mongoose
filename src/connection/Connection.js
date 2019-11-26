@@ -9,8 +9,10 @@ class Connection
         this._password = null;
         this._name = null;
 
-        this._hosts = [];
-        this._options = [];
+        this._hosts = null;
+        this._options = null;
+
+        this._mongoose = null;
     }
 
     /**
@@ -109,8 +111,44 @@ class Connection
         this._name = value;
     }
 
-    async connect() {
+    /**
+     *
+     * @return {mongoose}
+     */
+    get mongoose() {
+        return this._mongoose;
+    }
 
+    /**
+     *
+     * @param value
+     */
+    set mongoose(value) {
+        this._mongoose = value;
+    }
+
+    toArray() {
+        const url = [];
+        url.push(this._protocol + '://');
+
+        if (this._user && this._password) {
+            url.push(this._user);
+            url.push(':');
+            url.push(this._password);
+            url.push('@');
+        }
+
+        url.push(this._hosts.toString());
+
+        return [
+            url.join(''),
+            this._options.toArray(),
+        ];
+    }
+
+    async connect() {
+        const [url, options] = this.toArray();
+        await this._mongoose.connect(url, options);
     }
 }
 
