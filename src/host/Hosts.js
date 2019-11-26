@@ -39,12 +39,12 @@ class Hosts
      * @return {string}
      * @private
      */
-    __toString() {
+    toString() {
         let hosts = '';
         this._hosts.forEach((host) => {
-            hosts += host.toString();
+            hosts.push(host.toString());
         })
-        return hosts;
+        return hosts.join(',');
     }
 }
 

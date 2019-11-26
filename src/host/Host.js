@@ -50,8 +50,8 @@ class Host
      * @return {string}
      * @private
      */
-    __toString() {
-        return this._host + ':' + this._port
+    toString() {
+        return this._host + ':' + this._port;
     }
 }
 

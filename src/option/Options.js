@@ -26,6 +26,10 @@ class Options
         }
         this._options.set(expr, value);
     }
+
+    toArray() {
+        return this._options.entries();
+    }
 }
 
 export default Options;
