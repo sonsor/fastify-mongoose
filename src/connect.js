@@ -30,6 +30,9 @@ const connect = (config) => {
     });
 
     // set all options
+    for (const [key, value] of options) {
+        connection.options[key] = value;
+    }
 
     // establish the connection
 

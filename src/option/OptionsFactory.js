@@ -3,17 +3,19 @@ import defaults from './defaults';
 
 class OptionsFactory
 {
-    create() {
+    static create() {
 
         // creating options instance
         const options = new Options();
 
         // settingup default options
-        for (let key in defaults) options[key] = defaults[key];
+        for (const [key, value] of defaults) {
+            options[key] = value;
+        }
 
         // return the options instance
         return options;
     }
 }
 
-export defaults OptionsFactory;
+export default OptionsFactory;
