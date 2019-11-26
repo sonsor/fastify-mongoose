@@ -35,12 +35,14 @@ const connect = config => {
     connection.hosts.add(new _host.Host(host, port));
   }); // set all options
 
-  for (const [key, value] of options) {
+  for (const [key, value] of Object.entries(options)) {
     connection.options[key] = value;
-  } // establish the connection
-  // return the connection instance
+  }
 
+  console.log(connection.options.toArray()); // establish the connection
+  // return the connection instance
 };
 
+connect({});
 var _default = connect;
 exports.default = _default;

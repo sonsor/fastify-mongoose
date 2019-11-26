@@ -7,24 +7,30 @@ class Options
         this._options = new Map();
     }
 
+    get options() {
+        return this._options;
+    }
+
+    set options(value) {
+        this._options = value;
+    }
+
     /**
      *
      * @param key
      * @return {*}
      */
-    get [expr]() {
-        if (!this._options.has(expr)) {
+    get(target, key) {
+        if (!target.options.has(key)) {
             throw new Error('the options ' + key + ' not supported');
         }
 
-        return this._options.get(expr);
+        return target.options.get(key);
     }
 
-    set [expr](value) {
-        if (!this._options.has(expr)) {
-            throw new Error('the options ' + key + ' not supported');
-        }
-        this._options.set(expr, value);
+    set(target, key, value) {
+        target._options.set(key, value);
+        return true;
     }
 
     toArray() {

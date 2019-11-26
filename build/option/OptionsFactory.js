@@ -14,9 +14,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class OptionsFactory {
   static create() {
     // creating options instance
-    const options = new _Options.default(); // settingup default options
+    let options = new _Options.default();
+    options = new Proxy(options, {
+      get: options.get,
+      set: options.set
+    }); // setting up default options
 
-    for (const [key, value] of _defaults.default) {
+    for (const [key, value] of Object.entries(_defaults.default)) {
       options[key] = value;
     } // return the options instance
 

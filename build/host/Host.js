@@ -61,7 +61,7 @@ class Host {
    */
 
 
-  __toString() {
+  toString() {
     return this._host + ':' + this._port;
   }
 

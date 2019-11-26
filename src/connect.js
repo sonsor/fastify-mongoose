@@ -30,14 +30,17 @@ const connect = (config) => {
     });
 
     // set all options
-    for (const [key, value] of options) {
+    for (const [key, value] of Object.entries(options)) {
         connection.options[key] = value;
     }
 
+    console.log(connection.options.toArray());
+
     // establish the connection
+
 
     // return the connection instance
 
 }
-
+connect({});
 export default connect;
