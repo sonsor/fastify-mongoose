@@ -1,7 +1,7 @@
 import Options from './Options';
-import Option from './Option';
+import OptionsFactory from './OptionsFactory';
 
 export {
-    Option,
+    OptionsFactory,
     Options
 }
