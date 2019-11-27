@@ -20,15 +20,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/sonsor/fastify-mongoose.git"
+    "url": "git+https://github.com/sonsor/fastify-mongoose.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/sonsor/fastify-mongoose/issues"
+    "url": "https://githun.com/sonsor/fastify-mongoose/issues"
   },
-  "homepage": "https://gitlab.com/sonsor/fastify-mongoose#readme",
+  "homepage": "https://github.com/sonsor/fastify-mongoose#readme",
   "devDependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
