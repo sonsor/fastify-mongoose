@@ -1,3 +1,4 @@
+
 /**
  *
  */
@@ -148,6 +149,10 @@ class Connection
         ];
     }
 
+    /**
+     *
+     * @return {Promise<Connection>}
+     */
     async connect() {
         const [url, options] = this.toArray();
         await this._mongoose.connect(url, options);

@@ -2,7 +2,7 @@ import { ConnectionFactory } from './connection';
 import { Host } from './host';
 import { toArray } from './helpers';
 
-const connect = (config, next) => {
+const connect = (fastify, config, next) => {
 
     // extract configs
     const {
@@ -23,9 +23,17 @@ const connect = (config, next) => {
     connection.password = password;
 
     // set db name for the connection
+    if (!name) {
+        next(new Error('should provide database name.'));
+        return;
+    }
     connection.name = name;
 
     // add all the hostss
+    if (!hosts) {
+        next(new Error('should provide at lease one host details.'));
+        return;
+    }
     for (const { host, port} of toArray(hosts)) {
         connection.hosts.add(new Host(host, port));
     }
@@ -40,7 +48,11 @@ const connect = (config, next) => {
     // establish the connection
     connection
         .connect()
-        .then(next);
+        .then((conn) => {
+            fastify.decorate('db', conn);
+            next();
+        })
+        .catch(err => next(err))
 }
 
 export default connect;

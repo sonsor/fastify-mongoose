@@ -40,7 +40,7 @@ class Hosts
      * @private
      */
     toString() {
-        let hosts = '';
+        let hosts = [];
         this._hosts.forEach((host) => {
             hosts.push(host.toString());
         })

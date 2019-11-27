@@ -157,15 +157,24 @@ class Connection {
     }
 
     url.push(this._hosts.toString());
+    url.push('/');
+    url.push(this.name);
     return [url.join(''), this._options.toArray()];
   }
+  /**
+   *
+   * @return {Promise<Connection>}
+   */
+
 
   async connect() {
     const [url, options] = this.toArray();
     await this._mongoose.connect(url, options);
+    return this._mongoose.connection;
   }
 
 }
 
 var _default = Connection;
 exports.default = _default;
+//# sourceMappingURL=Connection.js.map

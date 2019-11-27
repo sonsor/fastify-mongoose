@@ -21,3 +21,4 @@ var _ConnectionFactory = _interopRequireDefault(require("./ConnectionFactory"));
 var _Connection = _interopRequireDefault(require("./Connection"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//# sourceMappingURL=index.js.map

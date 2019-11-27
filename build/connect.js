@@ -11,7 +11,7 @@ var _host = require("./host");
 
 var _helpers = require("./helpers");
 
-const connect = config => {
+const connect = (fastify, config, next) => {
   // extract configs
   const {
     user,
@@ -28,7 +28,17 @@ const connect = config => {
 
   connection.password = password; // set db name for the connection
 
+  if (!name) {
+    next(new Error('should provide database name.'));
+    return;
+  }
+
   connection.name = name; // add all the hostss
+
+  if (!hosts) {
+    next(new Error('should provide at lease one host details.'));
+    return;
+  }
 
   for (const {
     host,
@@ -43,8 +53,13 @@ const connect = config => {
   }
 
   console.log(connection.options.toArray()); // establish the connection
-  // return the connection instance
+
+  connection.connect().then(conn => {
+    fastify.decorate('db', conn);
+    next();
+  }).catch(err => next(err));
 };
 
 var _default = connect;
 exports.default = _default;
+//# sourceMappingURL=connect.js.map

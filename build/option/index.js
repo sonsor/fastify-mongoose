@@ -21,3 +21,4 @@ var _Options = _interopRequireDefault(require("./Options"));
 var _OptionsFactory = _interopRequireDefault(require("./OptionsFactory"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//# sourceMappingURL=index.js.map

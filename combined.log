@@ -1,0 +1,3 @@
+{"message":"mongodb://test:1/","level":"info"}
+{"message":"mongodb://test:1/","level":"error"}
+{"message":"mongodb://test:1/","level":"warn"}

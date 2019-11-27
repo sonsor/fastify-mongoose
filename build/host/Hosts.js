@@ -50,7 +50,7 @@ class Hosts {
 
 
   toString() {
-    let hosts = '';
+    let hosts = [];
 
     this._hosts.forEach(host => {
       hosts.push(host.toString());
@@ -63,3 +63,4 @@ class Hosts {
 
 var _default = Hosts;
 exports.default = _default;
+//# sourceMappingURL=Hosts.js.map
