@@ -40,7 +40,11 @@ class Options {
   }
 
   toArray() {
-    return this._options.entries();
+    let obj = {};
+
+    this._options.forEach((v, k) => obj[k] = v);
+
+    return obj;
   }
 
 }

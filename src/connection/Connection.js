@@ -139,6 +139,8 @@ class Connection
         }
 
         url.push(this._hosts.toString());
+        url.push('/');
+        url.push(this.name);
 
         return [
             url.join(''),
@@ -149,6 +151,7 @@ class Connection
     async connect() {
         const [url, options] = this.toArray();
         await this._mongoose.connect(url, options);
+        return this._mongoose.connection;
     }
 }
 

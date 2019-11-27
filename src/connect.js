@@ -2,7 +2,7 @@ import { ConnectionFactory } from './connection';
 import { Host } from './host';
 import { toArray } from './helpers';
 
-const connect = (config) => {
+const connect = (config, next) => {
 
     // extract configs
     const {
@@ -38,10 +38,9 @@ const connect = (config) => {
     console.log(connection.options.toArray());
 
     // establish the connection
-
-
-    // return the connection instance
-
+    connection
+        .connect()
+        .then(next);
 }
-connect({options: {}});
+
 export default connect;

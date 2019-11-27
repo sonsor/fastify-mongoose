@@ -46,8 +46,5 @@ const connect = config => {
   // return the connection instance
 };
 
-connect({
-  options: {}
-});
 var _default = connect;
 exports.default = _default;

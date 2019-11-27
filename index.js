@@ -1,11 +1,13 @@
-//const fp = require('fastify-plugin')
-//const mongoose = require('mongoose');
+const connect = require('./build/connect').default;
 
-import fp from 'fastify-plugin';
-import mongoose from 'mongoose';
-import connect from './src';
-
-console.log(connect());
+console.log(connect);
+connect({
+    hosts: {
+        host: 'test',
+        port: 1
+    },
+    options: {}
+});
 
 /*class FastifyMongoose {
     constructor(config, next) {
