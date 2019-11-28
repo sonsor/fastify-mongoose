@@ -1,0 +1,14 @@
+{
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-babel",
+    "all": true,
+    "check-coverage": false,
+    "reporter": [
+      "html",
+      "text"
+    ],
+    "report-dir": "./tests/coverage",
+    "sourceMap": true,
+    "source-map-support": true
+  }
+}

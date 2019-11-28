@@ -1,5 +1,30 @@
 "use strict";
 
+var cov_1n02ltwe9i = function () {
+  var path = "/home/wasif/projects/upstore/fastify-mongoose/src/option/defaults.js";
+  var hash = "b31e409f1d0826791ef653150d2cc44e77b78c0d";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/wasif/projects/upstore/fastify-mongoose/src/option/defaults.js",
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
+    hash: "b31e409f1d0826791ef653150d2cc44e77b78c0d"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  return coverage[path] = coverageData;
+}();
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
