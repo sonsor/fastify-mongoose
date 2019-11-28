@@ -1,4 +1,4 @@
---require ./test/bootstrap.js
+--require ./tests/bootstrap.js
 --timeout 10000
 --require @babel/register
 --recursive

@@ -1,7 +1,10 @@
 {
   "nyc": {
     "extends": "@istanbuljs/nyc-config-babel",
-    "all": true,
+    "all": false,
+    "include": [
+      "./src/**/*.js"
+    ],
     "check-coverage": false,
     "reporter": [
       "html",

@@ -13,7 +13,7 @@
     "dev": "npm run build && node -r source-map-support/register ./index.js",
     "lint": "eslint --ignore-path .gitignore ./src ./tests",
     "test": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests/**/*.test.js",
-    "coverage": "nyc npm test",
+    "coverage": "./node_modules/.bin/nyc npm test",
     "pre:commit": "npm run lint && npm run coverage --silent",
     "pre:publish": "npm run lint && npm run build && npm run coverage"
   },
