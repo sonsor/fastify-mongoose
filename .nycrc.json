@@ -1,0 +1,16 @@
+{
+  "exclude": [
+    "tests/**",
+    "build/**",
+    "combined.log",
+    "error.log",
+    "node_modules/**"
+  ],
+  "reporter": [
+    "lcov",
+    "text"
+  ],
+  "checkCoverage": true,
+  "sourceMap": false,
+  "instrument": false
+}

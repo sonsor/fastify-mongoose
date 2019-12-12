@@ -13,7 +13,7 @@
     "dev": "npm run build && node -r source-map-support/register ./index.js",
     "lint": "eslint --ignore-path .gitignore ./src ./tests",
     "test": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests/**/*.test.js",
-    "coverage": "./node_modules/.bin/nyc npm test",
+    "coverage": "./node_modules/.bin/nyc --require @babel/register npm test",
     "pre:commit": "npm run lint && npm run coverage --silent",
     "pre:publish": "npm run lint && npm run build && npm run coverage"
   },
@@ -36,6 +36,7 @@
     "@istanbuljs/nyc-config-babel": "^2.1.1",
     "babel-plugin-istanbul": "^5.2.0",
     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^6.7.1",
