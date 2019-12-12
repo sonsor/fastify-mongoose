@@ -1,4 +1,5 @@
-const chai = require('chai');
-const sinonChai = require('sinon-chai');
-chai.use(require("chai-as-promised"));
+import chai from 'chai';
+import sinonChai from 'sinon-chai';
+import chaiAsPRomise from "chai-as-promised";
+chai.use(chaiAsPRomise );
 chai.use(sinonChai);

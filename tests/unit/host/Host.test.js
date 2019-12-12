@@ -1,10 +1,15 @@
-import { Host } from '../../../src/host';
+import Host from '../../../src/host/Host';
 import { expect } from 'chai';
 import { stub } from 'sinon';
 
 describe('#Host', () => {
-    it('should ', () => {
-        new Host('test', 1);
-        expect(1).to.be.equal(1);
-    });
+
+    describe('#constructor', () => {
+
+        it('should set host and port', () => {
+            let instance = new Host('localhost', 27017);
+            expect(instance.host).to.be.equal('localhost');
+        });
+
+    })
 })
