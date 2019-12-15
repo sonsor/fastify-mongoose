@@ -1,6 +1,5 @@
 import Host from '../../../src/host/Host';
 import { expect } from 'chai';
-import { stub } from 'sinon';
 
 describe('#Host', () => {
 
@@ -52,5 +51,5 @@ describe('#Host', () => {
             expect(instance.toString()).to.be.a('string');
             expect(instance.toString()).to.be.equal('localhost:27017');
         });
-    })
-})
+    });
+});
