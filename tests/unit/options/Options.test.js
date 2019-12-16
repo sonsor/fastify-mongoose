@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import { stub } from 'sinon';
 import Options from '../../../src/option/Options';
 
 describe('#Options', () => {
@@ -67,7 +66,6 @@ describe('#Options', () => {
             expect(instance.toArray()).to.be.eql({key1: 'value1'});
         });
     })
-
 });
 
 
