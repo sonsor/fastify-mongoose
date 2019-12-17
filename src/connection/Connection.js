@@ -130,16 +130,16 @@ class Connection
 
     toArray() {
         const url = [];
-        url.push(this._protocol + '://');
+        url.push(this.protocol + '://');
 
-        if (this._user && this._password) {
-            url.push(this._user);
+        if (this.user && this.password) {
+            url.push(this.user);
             url.push(':');
-            url.push(this._password);
+            url.push(this.password);
             url.push('@');
         }
 
-        url.push(this._hosts.toString());
+        url.push(this.hosts.toString());
         url.push('/');
         url.push(this.name);
 
