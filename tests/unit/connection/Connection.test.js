@@ -199,8 +199,8 @@ describe('#Connection', () => {
 
             instance.name = 'test';
             instance.protocol = 'mongodb';
-            instance.user = '';
-            instance.password = '';
+            instance.user = 'test';
+            instance.password = 'test';
             instance.hosts = hosts;
             instance.options = options;
         });
@@ -227,13 +227,40 @@ describe('#Connection', () => {
         });
 
         it('should return an array of first index as url', () => {
-            expect(instance.toArray()[0]).to.be.equal('mongodb://localhost:27017/test');;
+            expect(instance.toArray()[0]).to.be.equal('mongodb://test:test@localhost:27017/test');;
+        });
+
+        it('should return an array of first index as url without user and password', () => {
+            instance.user = '';
+            instance.password = '';
+            expect(instance.toArray()[0]).to.be.equal('mongodb://localhost:27017/test');
         });
 
         it('should return array of seconad param as options', () => {
             expect(instance.toArray()[1]).to.be.eql({key: 'value'});
         });
     });
+
+    describe('#connect', () => {
+
+        beforeEach(() => {
+            stub(instance, 'toArray').returns([
+                'mongodb://localhost:27017',
+                {}
+            ]);
+            instance.mongoose = mongoose;
+            stub(mongoose, 'connect').resolves(true);
+        });
+
+        afterEach(() => {
+            instance.toArray.restore();
+            mongoose.connect.restore();
+        });
+
+        it('should return the mongo connection a non empty promise', () => {
+            console.log("resturns : ", instance.connect());
+            expect(instance.connect()).to.be.a('Promise');
+        });
+
+    })
 });
-
-
