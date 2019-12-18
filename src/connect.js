@@ -43,8 +43,6 @@ const connect = (fastify, config, next) => {
         connection.options.set(key, value);
     }
 
-    console.log(connection.options.toArray());
-
     // establish the connection
     connection
         .connect()
