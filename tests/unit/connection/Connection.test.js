@@ -258,9 +258,7 @@ describe('#Connection', () => {
         });
 
         it('should return the mongo connection a non empty promise', () => {
-            console.log("resturns : ", instance.connect());
             expect(instance.connect()).to.be.a('Promise');
         });
-
     })
 });
