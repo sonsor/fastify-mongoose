@@ -33,7 +33,7 @@ class Options
     }
 
     toArray() {
-        let obj = {};
+        const obj = {};
         this._options.forEach((v, k) => obj[k] = v)
         return obj;
     }

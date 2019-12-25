@@ -10,7 +10,7 @@ describe('#connect', () => {
 
     let hosts;
     let options;
-    let fastify = {};
+    const fastify = {};
     let next;
     let resolve;
     let reject;
@@ -27,14 +27,12 @@ describe('#connect', () => {
         next = stub();
 
         stub(ConnectionFactory, 'create').returns({
-            hosts: hosts,
-            options: options,
-            connect: () => {
-                return new Promise((res, rej) => {
-                    resolve = res;
-                    reject = rej
-                })
-            }
+            hosts,
+            options,
+            connect: () => new Promise((res, rej) => {
+                resolve = res;
+                reject = rej
+            })
         });
     });
 
@@ -46,17 +44,13 @@ describe('#connect', () => {
     });
 
     it('should throw error if name is empty', () => {
-        next.onCall(0).callsFake((err) => {
-            return err;
-        });
+        next.onCall(0).callsFake(err => err);
         expect(connect(fastify, {}, next)).to.false;
         expect(next.called).to.true;
     });
 
     it('should throw error if hosts is empty', () => {
-        next.onCall(0).callsFake((err) => {
-            return err;
-        });
+        next.onCall(0).callsFake(err => err);
         expect(connect(fastify, { name: 'test'}, next)).to.false;
         expect(next.called).to.true;
     });

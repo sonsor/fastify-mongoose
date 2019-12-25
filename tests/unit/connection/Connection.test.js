@@ -190,12 +190,9 @@ describe('#Connection', () => {
         const hosts = new Hosts();
         const options = new Options();
 
-        let hostsString;
-        let optionsArray;
-
         beforeEach(() => {
-            hostsString = stub(hosts, 'toString').returns('localhost:27017');
-            optionsArray = stub(options, 'toArray').returns({key: 'value'});
+            stub(hosts, 'toString').returns('localhost:27017');
+            stub(options, 'toArray').returns({key: 'value'});
 
             instance.name = 'test';
             instance.protocol = 'mongodb';
@@ -227,7 +224,7 @@ describe('#Connection', () => {
         });
 
         it('should return an array of first index as url', () => {
-            expect(instance.toArray()[0]).to.be.equal('mongodb://test:test@localhost:27017/test');;
+            expect(instance.toArray()[0]).to.be.equal('mongodb://test:test@localhost:27017/test');
         });
 
         it('should return an array of first index as url without user and password', () => {

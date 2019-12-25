@@ -21,15 +21,15 @@ describe('#ConnectionFactory', () => {
         });
 
         it('should return the connection object', () => {
-            expect(Connection.prototype.isPrototypeOf(ConnectionFactory.create())).to.true;
+            expect(ConnectionFactory.create() instanceof Connection).to.true;
         });
 
         it('should set the hosts property', () => {
-            expect(Hosts.prototype.isPrototypeOf(ConnectionFactory.create().hosts)).to.true;
+            expect(ConnectionFactory.create().hosts instanceof Hosts).to.true;
         });
 
         it('should set the options property', () => {
-            expect(Options.prototype.isPrototypeOf(ConnectionFactory.create().options)).to.true;
+            expect(ConnectionFactory.create().options instanceof Options).to.true;
         });
 
         it('should set the protocol', () => {

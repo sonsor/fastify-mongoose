@@ -1,5 +1,6 @@
 import toArray from './toArray';
-
+const data = {};
 export {
-    toArray
+    toArray,
+    data
 };

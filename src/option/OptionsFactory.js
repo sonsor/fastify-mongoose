@@ -1,5 +1,5 @@
 import Options from './Options';
-import * as defaults from './defaults';
+import defaults from './defaults';
 
 class OptionsFactory
 {

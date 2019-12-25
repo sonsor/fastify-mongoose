@@ -5,11 +5,6 @@ import Options from '../../../src/option/Options';
 
 describe('#OptionsFactory', () => {
 
-
-    let defaults = {
-        key1: 'value1'
-    };
-
     beforeEach(() => {
         stub(Options.prototype, 'get').returns('value1');
         stub(Options.prototype, 'set');

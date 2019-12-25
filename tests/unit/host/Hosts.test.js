@@ -5,7 +5,7 @@ import { stub } from 'sinon';
 describe('#Hosts', () => {
 
     let instance = null;
-    let host = {
+    const host = {
         toString: stub().returns('localhost:27017')
     };
 

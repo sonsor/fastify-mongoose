@@ -1,7 +1,7 @@
 import Connection from './Connection';
 import { Hosts } from '../host';
 import { OptionsFactory } from '../option';
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 class ConnectionFactory
 {
