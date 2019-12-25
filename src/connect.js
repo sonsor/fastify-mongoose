@@ -25,15 +25,17 @@ const connect = (fastify, config, next) => {
     // set db name for the connection
     if (!name) {
         next(new Error('should provide database name.'));
-        return;
+        return false;
     }
+
     connection.name = name;
 
     // add all the hostss
     if (!hosts) {
         next(new Error('should provide at lease one host details.'));
-        return;
+        return false;
     }
+
     for (const { host, port} of toArray(hosts)) {
         connection.hosts.add(new Host(host, port));
     }
