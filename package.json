@@ -1,5 +1,5 @@
 {
-  "name": "fastify-mongoose",
+  "name": "fastify-mongoose-connection",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -59,7 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm pre:push"
+      "pre-push": "npm run pre:push"
     }
   }
 }
