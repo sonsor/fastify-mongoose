@@ -2,7 +2,7 @@
 
 var cov_27fvfp44ld = function () {
   var path = "/home/wasif/projects/upstore/fastify-mongoose/src/connection/Connection.js";
-  var hash = "98354a8b430396ac1c8b6e16919a09b55733a5b7";
+  var hash = "1f40ea80f3cc844057e30443d2029cf75565d621";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
@@ -235,7 +235,7 @@ var cov_27fvfp44ld = function () {
         },
         end: {
           line: 133,
-          column: 41
+          column: 40
         }
       },
       "23": {
@@ -255,7 +255,7 @@ var cov_27fvfp44ld = function () {
         },
         end: {
           line: 136,
-          column: 33
+          column: 32
         }
       },
       "25": {
@@ -275,7 +275,7 @@ var cov_27fvfp44ld = function () {
         },
         end: {
           line: 138,
-          column: 37
+          column: 36
         }
       },
       "27": {
@@ -295,7 +295,7 @@ var cov_27fvfp44ld = function () {
         },
         end: {
           line: 142,
-          column: 41
+          column: 40
         }
       },
       "29": {
@@ -811,7 +811,7 @@ var cov_27fvfp44ld = function () {
           },
           end: {
             line: 135,
-            column: 40
+            column: 38
           }
         },
         type: "binary-expr",
@@ -822,16 +822,16 @@ var cov_27fvfp44ld = function () {
           },
           end: {
             line: 135,
-            column: 22
+            column: 21
           }
         }, {
           start: {
             line: 135,
-            column: 26
+            column: 25
           },
           end: {
             line: 135,
-            column: 40
+            column: 38
           }
         }],
         line: 135
@@ -898,7 +898,7 @@ var cov_27fvfp44ld = function () {
       "1": [0, 0]
     },
     _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    hash: "98354a8b430396ac1c8b6e16919a09b55733a5b7"
+    hash: "1f40ea80f3cc844057e30443d2029cf75565d621"
   };
   var coverage = global[gcv] || (global[gcv] = {});
 
@@ -1094,17 +1094,17 @@ class Connection {
     cov_27fvfp44ld.f[15]++;
     const url = (cov_27fvfp44ld.s[21]++, []);
     cov_27fvfp44ld.s[22]++;
-    url.push(this._protocol + '://');
+    url.push(this.protocol + '://');
     cov_27fvfp44ld.s[23]++;
 
-    if ((cov_27fvfp44ld.b[1][0]++, this._user) && (cov_27fvfp44ld.b[1][1]++, this._password)) {
+    if ((cov_27fvfp44ld.b[1][0]++, this.user) && (cov_27fvfp44ld.b[1][1]++, this.password)) {
       cov_27fvfp44ld.b[0][0]++;
       cov_27fvfp44ld.s[24]++;
-      url.push(this._user);
+      url.push(this.user);
       cov_27fvfp44ld.s[25]++;
       url.push(':');
       cov_27fvfp44ld.s[26]++;
-      url.push(this._password);
+      url.push(this.password);
       cov_27fvfp44ld.s[27]++;
       url.push('@');
     } else {
@@ -1112,7 +1112,7 @@ class Connection {
     }
 
     cov_27fvfp44ld.s[28]++;
-    url.push(this._hosts.toString());
+    url.push(this.hosts.toString());
     cov_27fvfp44ld.s[29]++;
     url.push('/');
     cov_27fvfp44ld.s[30]++;

@@ -2,7 +2,7 @@
 
 var cov_3nntw2sie = function () {
   var path = "/home/wasif/projects/upstore/fastify-mongoose/src/host/Hosts.js";
-  var hash = "c8a9b1f08175e7fc755c2b91504d43ee0e1ef61a";
+  var hash = "b9d7e8c6613c1c4d79cb62aeea9c389cfa064260";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
@@ -51,11 +51,11 @@ var cov_3nntw2sie = function () {
       "4": {
         start: {
           line: 43,
-          column: 20
+          column: 22
         },
         end: {
           line: 43,
-          column: 22
+          column: 24
         }
       },
       "5": {
@@ -256,7 +256,7 @@ var cov_3nntw2sie = function () {
     },
     b: {},
     _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    hash: "c8a9b1f08175e7fc755c2b91504d43ee0e1ef61a"
+    hash: "b9d7e8c6613c1c4d79cb62aeea9c389cfa064260"
   };
   var coverage = global[gcv] || (global[gcv] = {});
 
@@ -327,7 +327,7 @@ class Hosts {
 
   toString() {
     cov_3nntw2sie.f[4]++;
-    let hosts = (cov_3nntw2sie.s[4]++, []);
+    const hosts = (cov_3nntw2sie.s[4]++, []);
     cov_3nntw2sie.s[5]++;
 
     this._hosts.forEach(host => {

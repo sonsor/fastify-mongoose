@@ -1,12 +1,18 @@
 # Fastify Mongoose Connection
 this package add a db property in fastify object a fastify decorator workks.
 
-## How to install
+### How to install
 ```bash
 npm i fastify-mongoose-connection
 ```
 
-### how to access connection
+### How to access connection
+```javascript
+const fastify = require('fastify')
+ 
+fastify.register(require('fastify-mongoose-connection'), config)
+```
+this will add a db property to fastify
 ```javascript
 fastify.db.users.find({});
 ```

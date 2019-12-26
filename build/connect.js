@@ -2,7 +2,7 @@
 
 var cov_8rgvschgb = function () {
   var path = "/home/wasif/projects/upstore/fastify-mongoose/src/connect.js";
-  var hash = "1f04194a131fc22b35607fcb63b9e331f36c90d9";
+  var hash = "6f41893bb7393667369b98c8735d38109a3040cc";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
@@ -85,100 +85,90 @@ var cov_8rgvschgb = function () {
         },
         end: {
           line: 28,
-          column: 15
+          column: 21
         }
       },
       "8": {
         start: {
-          line: 30,
+          line: 31,
           column: 4
         },
         end: {
-          line: 30,
+          line: 31,
           column: 27
         }
       },
       "9": {
         start: {
-          line: 33,
+          line: 34,
           column: 4
         },
         end: {
-          line: 36,
+          line: 37,
           column: 5
         }
       },
       "10": {
         start: {
-          line: 34,
+          line: 35,
           column: 8
         },
         end: {
-          line: 34,
+          line: 35,
           column: 69
         }
       },
       "11": {
         start: {
-          line: 35,
+          line: 36,
           column: 8
         },
         end: {
-          line: 35,
-          column: 15
+          line: 36,
+          column: 21
         }
       },
       "12": {
         start: {
-          line: 37,
+          line: 39,
           column: 4
         },
         end: {
-          line: 39,
+          line: 41,
           column: 5
         }
       },
       "13": {
         start: {
-          line: 38,
+          line: 40,
           column: 8
         },
         end: {
-          line: 38,
+          line: 40,
           column: 51
         }
       },
       "14": {
         start: {
-          line: 42,
+          line: 44,
           column: 4
         },
         end: {
-          line: 44,
+          line: 46,
           column: 5
         }
       },
       "15": {
         start: {
-          line: 43,
+          line: 45,
           column: 8
         },
         end: {
-          line: 43,
+          line: 45,
           column: 43
         }
       },
       "16": {
-        start: {
-          line: 46,
-          column: 4
-        },
-        end: {
-          line: 46,
-          column: 46
-        }
-      },
-      "17": {
         start: {
           line: 49,
           column: 4
@@ -188,7 +178,7 @@ var cov_8rgvschgb = function () {
           column: 32
         }
       },
-      "18": {
+      "17": {
         start: {
           line: 52,
           column: 12
@@ -198,17 +188,17 @@ var cov_8rgvschgb = function () {
           column: 41
         }
       },
-      "19": {
+      "18": {
         start: {
           line: 53,
           column: 12
         },
         end: {
           line: 53,
-          column: 19
+          column: 29
         }
       },
-      "20": {
+      "19": {
         start: {
           line: 55,
           column: 22
@@ -330,35 +320,35 @@ var cov_8rgvschgb = function () {
       "1": {
         loc: {
           start: {
-            line: 33,
+            line: 34,
             column: 4
           },
           end: {
-            line: 36,
+            line: 37,
             column: 5
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 33,
+            line: 34,
             column: 4
           },
           end: {
-            line: 36,
+            line: 37,
             column: 5
           }
         }, {
           start: {
-            line: 33,
+            line: 34,
             column: 4
           },
           end: {
-            line: 36,
+            line: 37,
             column: 5
           }
         }],
-        line: 33
+        line: 34
       }
     },
     s: {
@@ -381,8 +371,7 @@ var cov_8rgvschgb = function () {
       "16": 0,
       "17": 0,
       "18": 0,
-      "19": 0,
-      "20": 0
+      "19": 0
     },
     f: {
       "0": 0,
@@ -394,7 +383,7 @@ var cov_8rgvschgb = function () {
       "1": [0, 0]
     },
     _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    hash: "1f04194a131fc22b35607fcb63b9e331f36c90d9"
+    hash: "6f41893bb7393667369b98c8735d38109a3040cc"
   };
   var coverage = global[gcv] || (global[gcv] = {});
 
@@ -444,7 +433,7 @@ const connect = (fastify, config, next) => {
     cov_8rgvschgb.s[6]++;
     next(new Error('should provide database name.'));
     cov_8rgvschgb.s[7]++;
-    return;
+    return false;
   } else {
     cov_8rgvschgb.b[0][1]++;
   }
@@ -459,7 +448,7 @@ const connect = (fastify, config, next) => {
     cov_8rgvschgb.s[10]++;
     next(new Error('should provide at lease one host details.'));
     cov_8rgvschgb.s[11]++;
-    return;
+    return false;
   } else {
     cov_8rgvschgb.b[1][1]++;
   }
@@ -480,21 +469,19 @@ const connect = (fastify, config, next) => {
   for (const [key, value] of Object.entries(options)) {
     cov_8rgvschgb.s[15]++;
     connection.options.set(key, value);
-  }
+  } // establish the connection
+
 
   cov_8rgvschgb.s[16]++;
-  console.log(connection.options.toArray()); // establish the connection
-
-  cov_8rgvschgb.s[17]++;
   connection.connect().then(conn => {
     cov_8rgvschgb.f[1]++;
-    cov_8rgvschgb.s[18]++;
+    cov_8rgvschgb.s[17]++;
     fastify.decorate('db', conn);
-    cov_8rgvschgb.s[19]++;
-    next();
+    cov_8rgvschgb.s[18]++;
+    next(null, conn);
   }).catch(err => {
     cov_8rgvschgb.f[2]++;
-    cov_8rgvschgb.s[20]++;
+    cov_8rgvschgb.s[19]++;
     return next(err);
   });
 };

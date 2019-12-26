@@ -2,7 +2,7 @@
 
 var cov_xe6py3jnh = function () {
   var path = "/home/wasif/projects/upstore/fastify-mongoose/src/option/Options.js";
-  var hash = "97ab4908932200049aac4ffd4ce47c29b898fd34";
+  var hash = "79bac1bce10806cc2acb48ee839abd3bcab6b65f";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
@@ -81,11 +81,11 @@ var cov_xe6py3jnh = function () {
       "7": {
         start: {
           line: 36,
-          column: 18
+          column: 20
         },
         end: {
           line: 36,
-          column: 20
+          column: 22
         }
       },
       "8": {
@@ -350,7 +350,7 @@ var cov_xe6py3jnh = function () {
       "0": [0, 0]
     },
     _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    hash: "97ab4908932200049aac4ffd4ce47c29b898fd34"
+    hash: "79bac1bce10806cc2acb48ee839abd3bcab6b65f"
   };
   var coverage = global[gcv] || (global[gcv] = {});
 
@@ -419,7 +419,7 @@ class Options {
 
   toArray() {
     cov_xe6py3jnh.f[5]++;
-    let obj = (cov_xe6py3jnh.s[7]++, {});
+    const obj = (cov_xe6py3jnh.s[7]++, {});
     cov_xe6py3jnh.s[8]++;
 
     this._options.forEach((v, k) => {
