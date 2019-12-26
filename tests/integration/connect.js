@@ -1,12 +1,10 @@
 import { expect } from 'chai';
-import { stub, spy } from 'sinon';
+import { stub } from 'sinon';
 import connect from '../../src/connect';
-import mongoose from 'mongoose';
 import fastify from 'fastify';
 
 describe('Fastify Mongoose Decorate', () => {
 
-    let next;
     const config = {
         user: '',
         password: '',

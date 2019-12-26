@@ -17,7 +17,7 @@
     "test:unit": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests/unit",
     "test:integration": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests/integration",
     "coverage": "./node_modules/.bin/nyc --require @babel/register npm run test:unit",
-    "pre:commit": "npm run lint && npm run coverage --silent",
+    "pre:push": "npm run lint && npm run coverage --silent",
     "pre:publish": "npm run lint && npm run build && npm run coverage"
   },
   "repository": {
@@ -59,7 +59,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm -v"
+      "pre-push": "npm pre:push"
     }
   }
 }
