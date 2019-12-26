@@ -50,7 +50,7 @@ const connect = (fastify, config, next) => {
         .connect()
         .then((conn) => {
             fastify.decorate('db', conn);
-            next();
+            next(null, conn);
         })
         .catch(err => next(err))
 }

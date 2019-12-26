@@ -9,11 +9,14 @@
   ],
   "scripts": {
     "build": "babel src -d build --source-maps",
-    "test:build": "babel tests -d test",
     "dev": "npm run build && node -r source-map-support/register ./index.js",
-    "lint": "eslint --ignore-path .gitignore ./src ./tests",
-    "test": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests",
-    "coverage": "./node_modules/.bin/nyc --require @babel/register npm test",
+    "lint": "eslint --ignore-path .gitignore ./src",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:build": "babel tests -d test",
+    "lint:test": "eslint --ignore-path .gitignore ./tests",
+    "test:unit": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests/unit",
+    "test:integration": "./node_modules/.bin/mocha --opts ./tests/mocha.opts ./tests/integration",
+    "coverage": "./node_modules/.bin/nyc --require @babel/register npm run test:unit",
     "pre:commit": "npm run lint && npm run coverage --silent",
     "pre:publish": "npm run lint && npm run build && npm run coverage"
   },
@@ -46,12 +49,13 @@
     "nyc": "^14.1.1",
     "sinon": "^7.5.0",
     "source-map-support": "^0.5.16",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "sinon-chai": "^3.3.0"
   },
   "dependencies": {
+    "fastify": "^2.11.0",
     "fastify-plugin": "^1.6.0",
-    "mongoose": "^5.7.12",
-    "sinon-chai": "^3.3.0"
+    "mongoose": "^5.7.12"
   },
   "husky": {
     "hooks": {
