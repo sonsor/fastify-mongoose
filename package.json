@@ -37,8 +37,10 @@
     "@babel/preset-env": "^7.7.4",
     "@babel/register": "^7.7.4",
     "@istanbuljs/nyc-config-babel": "^2.1.1",
+    "babel-minify": "^0.5.1",
     "babel-plugin-istanbul": "^5.2.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.1",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
@@ -48,9 +50,9 @@
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "sinon": "^7.5.0",
+    "sinon-chai": "^3.3.0",
     "source-map-support": "^0.5.16",
-    "winston": "^3.2.1",
-    "sinon-chai": "^3.3.0"
+    "winston": "^3.2.1"
   },
   "dependencies": {
     "fastify": "^2.11.0",
