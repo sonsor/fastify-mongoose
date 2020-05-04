@@ -46,6 +46,7 @@
     "chai-as-promised": "^7.1.1",
     "eslint": "^6.7.1",
     "eslint-config-node": "^4.0.0",
+    "eslint-plugin-import": "^2.20.2",
     "husky": "^3.1.0",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
